@@ -1,0 +1,213 @@
+.h_container {
+    display: flex;
+    width: 40%;
+    margin: 0 auto;
+    
+    .text_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    p {
+        font-size: clamp(1rem, 1.5vw, 1.8rem);
+        font-weight: 500;
+        color: #264a9a;
+        line-height: 1.8;
+        text-align: justify;
+        position: relative;
+        padding: 1.5rem;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(5px);
+    }
+}
+
+.qui {
+    font-size: clamp(2rem, 5vw, 5rem);
+    margin-top: 5%;
+    margin-bottom: 3%;
+    text-align: center;
+    width: 100%;
+    color: #1b3e75;
+    position: relative;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    
+    &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: #987746;
+        margin: 0.8rem auto 0;
+        border-radius: 2px;
+    }
+}
+
+.pic {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 40%;
+    margin: 0 auto;
+    
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        margin: 1.5% 0;
+        transition: all 0.4s ease;
+        
+        &:hover {
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5%;
+    padding: 0 2%;
+    margin-top: 2%;
+}
+
+/* Grands écrans */
+@media screen and (min-width: 1400px) {
+    .h_container {
+        width: 35%;
+    }
+    
+    .pic {
+        width: 35%;
+    }
+}
+
+/* Écrans d'ordinateur standard */
+@media screen and (max-width: 1399px) and (min-width: 992px) {
+    .h_container {
+        width: 40%;
+    }
+    
+    .pic {
+        width: 40%;
+    }
+}
+
+/* Écrans moyens - tablettes et petits laptops */
+@media screen and (max-width: 991px) and (min-width: 844px) {
+    .h_container {
+        width: 45%;
+        
+        p {
+            font-size: 1.6vw;
+        }
+    }
+    
+    .pic {
+        width: 45%;
+    }
+}
+
+/* Tablettes et grands smartphones */
+@media screen and (max-width: 843px) and (min-width: 576px) {
+    .qui {
+        font-size: 8vw;
+        margin-top: 15%;
+    }
+    
+    .mainContainer {
+        flex-direction: column;
+    }
+    
+    .h_container {
+        width: 80%;
+        margin-top: 5%;
+        
+        p {
+            font-size: 3.5vw;
+        }
+    }
+    
+    .pic {
+        width: 80%;
+        margin-top: 5%;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 575px) {
+    .qui {
+        font-size: 10vw;
+        margin-top: 20%;
+    }
+    
+    .mainContainer {
+        flex-direction: column;
+    }
+    
+    .h_container {
+        width: 90%;
+        margin-top: 8%;
+        
+        p {
+            font-size: 5vw;
+        }
+    }
+    
+    .pic {
+        width: 90%;
+        margin-top: 8%;
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 320px) {
+    .qui {
+        font-size: 12vw;
+        margin-top: 25%;
+    }
+    
+    .h_container {
+        width: 95%;
+        
+        p {
+            font-size: 5.5vw;
+        }
+    }
+    
+    .pic {
+        width: 95%;
+    }
+}
+
+/* Orientation paysage sur mobiles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .qui {
+        font-size: 6vw;
+        margin-top: 10%;
+    }
+    
+    .mainContainer {
+        padding-top: 3rem;
+    }
+    
+    .h_container {
+        width: 50%;
+        
+        p {
+            font-size: 2.2vw;
+        }
+    }
+    
+    .pic {
+        width: 45%;
+        
+        img {
+            margin: 0.5%;
+        }
+    }
+}

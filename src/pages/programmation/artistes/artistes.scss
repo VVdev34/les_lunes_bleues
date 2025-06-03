@@ -1,0 +1,226 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; // Empêche le défilement du fond
+  
+  .content-wrapper {
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    height: auto;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transform: none !important; // Empêche les transformations non désirées
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10; // S'assurer que le bouton est au-dessus des autres éléments
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  h1 {
+    color: #fff;
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1.8rem;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  
+  p {
+    color: #f0f0f0;
+    line-height: 1.6;
+    margin: 0.8rem 0;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  
+  article {
+    color: #e0e0e0;
+    line-height: 1.8;
+    margin: 1.5rem 0;
+    text-align: justify;
+    padding: 0 1rem;
+    word-wrap: break-word;
+  }
+}
+
+/* Grands écrans et écrans standards */
+@media (min-width: 1200px) {
+  .modalContainer {
+    .content-wrapper {
+      max-width: 1000px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+/* Écrans moyens - tablettes et ordinateurs portables */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .modalContainer {
+    .content-wrapper {
+      width: 85%;
+      padding: 1.8rem;
+      max-width: 800px;
+    }
+    
+    h1 {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) and (min-width: 481px) {
+  .modalContainer {
+    .content-wrapper {
+      width: 90%;
+      padding: 1.5rem;
+      max-height: 85vh;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    .close {
+      padding: 6px 12px;
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  .modalContainer {
+    .content-wrapper {
+      width: 95%;
+      padding: 1rem;
+    }
+    
+    h1 {
+      font-size: 1.3rem;
+      margin: 1rem 0 0.3rem 0;
+    }
+    
+    p {
+      font-size: 0.9rem;
+    }
+    
+    article {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      padding: 0 0.5rem;
+    }
+    
+    .close {
+      top: 5px;
+      right: 10px;
+      font-size: 0.9rem;
+      padding: 5px 10px;
+    }
+  }
+}
+
+/* Très petits écrans et appareils anciens */
+@media (max-width: 320px) {
+  .modalContainer {
+    .content-wrapper {
+      width: 98%;
+      padding: 0.8rem;
+    }
+    
+    h1 {
+      font-size: 1.1rem;
+      margin: 0.8rem 0 0.2rem 0;
+    }
+    
+    p {
+      font-size: 0.85rem;
+    }
+    
+    article {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      padding: 0 0.3rem;
+    }
+    
+    .close {
+      font-size: 0.8rem;
+      padding: 4px 8px;
+    }
+    
+    img {
+      margin: 1rem auto;
+    }
+  }
+}
+
+/* Orientation paysage sur mobiles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .modalContainer {
+    .content-wrapper {
+      max-height: 95vh;
+      padding: 1rem;
+    }
+    
+    h1 {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    
+    p {
+      margin: 0.4rem 0;
+    }
+    
+    img {
+      margin: 0.8rem auto;
+    }
+    
+    article {
+      margin: 0.8rem 0;
+    }
+  }
+}

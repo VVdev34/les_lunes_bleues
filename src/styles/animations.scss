@@ -1,0 +1,51 @@
+.will-change-transform {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+// For elements that need to be on top during transitions
+.z-top {
+  z-index: 10;
+  position: relative;
+}
+
+// Prevents animation flicker
+.force-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+// Smoother animations
+.smooth-text {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Transition utilities
+.transition-standard {
+  transition: all 0.3s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+.transition-slow {
+  transition: all 0.6s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+.transition-fast {
+  transition: all 0.2s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+// Fix for webkit animation flickering
+.fix-flicker {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}

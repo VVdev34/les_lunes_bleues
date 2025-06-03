@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "fantasqueBold";
+    src: url(./fonts/FantasqueSansMono-Bold.ttf);
+}
+@font-face {
+    font-family: "fantasqueReg";
+    src: url(./fonts/FantasqueSansMono-Bold.ttf);
+}
+@font-face {
+    font-family: "fantasqueRegI";
+    src: url(./fonts/FantasqueSansMono-Italic.ttf);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body{
+    font-family: "fantasqueReg";
+    position: relative;
+}
+
+#root {
+    min-height: 100%;
+    position: relative;
+}

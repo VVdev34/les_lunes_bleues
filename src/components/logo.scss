@@ -1,0 +1,82 @@
+.img_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+
+    img {
+        width: 35vw;
+        max-width: 600px;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+/* Grands écrans */
+@media screen and (min-width: 1400px) {
+    .img_container {
+        img {
+            width: 30vw;
+        }
+    }
+}
+
+/* Écrans d'ordinateur standard */
+@media screen and (max-width: 1399px) and (min-width: 992px) {
+    .img_container {
+        img {
+            width: 35vw;
+        }
+    }
+}
+
+/* Tablettes paysage et petits laptops */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+    .img_container {
+        height: auto;
+        
+        img {
+            width: 50vw;
+        }
+    }
+}
+
+/* Tablettes et grands smartphones */
+@media screen and (max-width: 575px) {
+    .img_container {
+        height: auto;
+        
+        img {
+            width: 75vw;
+        }
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 480px) {
+    .img_container {
+        img {
+            width: 85vw;
+        }
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 320px) {
+    .img_container {
+        img {
+            width: 90vw;
+        }
+    }
+}
+
+/* Orientation paysage sur mobiles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .img_container {
+        img {
+            width: 40vw;
+            max-height: 70vh;
+        }
+    }
+}

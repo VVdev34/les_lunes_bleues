@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "fantasqueReg", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1b3e7520 0%, #1b3e7540 100%);
+    color: #987746;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+@font-face {
+    font-family: "fantasqueBold";
+    src: url(./fonts/FantasqueSansMono-Bold.ttf);
+}
+@font-face {
+    font-family: "fantasqueReg";
+    src: url(./fonts/FantasqueSansMono-Bold.ttf);
+}
+@font-face {
+    font-family: "fantasqueRegI";
+    src: url(./fonts/FantasqueSansMono-Italic.ttf);
+}
+
+/* Règles d'accessibilité pour le focus */
+:focus {
+    outline: 3px solid rgba(27, 62, 117, 0.5);
+}
+
+/* Animations fluides pour tous les éléments */
+a, button, .infos, .close, img {
+    transition: all 0.3s ease;
+}
+
+/* Styles de base modernes */
+h1, h2, h3, h4, h5, h6 {
+    color: #1b3e75;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #987746;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #264a9a;
+}
+
+/* Conteneur commun */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Styles de carte communs */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations de base */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Styles pour assurer le défilement correct */
+.page-content {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 4vh;
+}

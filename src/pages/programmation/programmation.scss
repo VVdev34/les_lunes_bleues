@@ -1,0 +1,334 @@
+.containerP {
+    display: flex;
+    font-size: clamp(0.9rem, 1vw, 1.2rem);
+    margin: 0 2%;
+    width: 95%;
+    position: relative;
+    padding-bottom: 5rem;
+}
+
+.imgL {
+    width: 20%;
+    position: absolute; 
+    top: 0;
+    right: 0;
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.15));
+}
+
+h2, .titre {
+    font-size: clamp(2rem, 5vw, 5rem);
+    width: 80%; // Changed from 60% to be more consistent
+    margin: 5% auto 4%; // Changed to center horizontally with auto margins
+    color: #1b3e75;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center; // Added to center text
+    
+    &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: #987746;
+        margin: 0.8rem auto 0; // Changed to auto margins to center the line
+        border-radius: 2px;
+    }
+}
+
+.part1, .part2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 0 2%;
+}
+
+h1, p, article, span {
+    padding: 2%;
+}
+
+p, span {
+    color: black;
+    font-weight: bolder;
+}
+
+span {
+    font-family: "fantasqueRegI";
+}
+
+h1 {
+    color: #1b3e75;
+    font-family: "fantasqueBold";
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    position: relative;
+    margin-bottom: 1rem;
+    
+    &::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: #987746;
+        margin: 0.5rem 0 0;
+        border-radius: 2px;
+    }
+}
+
+article {
+    color: #264a9a;
+    line-height: 1.7;
+}
+
+.infos {
+    color: #987746;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    
+    &:hover {
+        color: lighten(#987746, 15%);
+        text-decoration: underline;
+    }
+}
+
+.carte {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .close {
+        cursor: pointer;
+    }
+    
+    .modalContainer {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        padding: 3%;
+        margin-left: -10%;
+        background-color: #1b3e75;
+        width: 35vw;
+        
+        img {
+            width: 50%;
+            margin-bottom: 5%;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        p {
+           display: flex;
+           justify-content: flex-end;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            width: 100%;
+        }
+        
+        a {
+            margin-top: 5%;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+/* Grands écrans */
+@media screen and (min-width: 1400px) {
+    .containerP {
+        font-size: 1.1rem;
+    }
+    
+    .imgL {
+        width: 18%;
+    }
+}
+
+/* Écrans d'ordinateur standard */
+@media screen and (max-width: 1399px) and (min-width: 992px) {
+    .containerP {
+        font-size: 1rem;
+    }
+}
+
+/* Écrans moyens - tablettes et petits laptops */
+@media screen and (max-width: 991px) and (min-width: 844px) {
+    .titre {
+        width: 70%;
+    }
+    
+    .imgL {
+        width: 22%;
+        top: 5%;
+    }
+}
+
+/* Tablettes et grands smartphones */
+@media screen and (max-width: 843px) and (min-width: 481px) {
+    .containerP {
+        flex-direction: column;
+        font-size: 2.5vw;
+        margin: 0 5%;
+        padding-top: 15%;
+    }
+    
+    .titre {
+        position: absolute;
+        top: 0;
+        font-size: 8vw;
+        width: 70%;
+        margin-left: 5%;
+    }
+    
+    .imgL {
+        width: 25%;
+        top: 15%;
+        right: 5%;
+    }
+    
+    .part1, .part2 {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .part2 {
+        margin-top: 2rem;
+    }
+    
+    h1 {
+        font-size: 5vw;
+    }
+    
+    .carte .modalContainer {
+        width: 85%;
+        left: 2%;
+        
+        h2 {
+            font-size: 5vw;
+            margin-left: 1%;
+        }
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 480px) {
+    .containerP {
+        flex-direction: column;
+        font-size: 4vw;
+        margin: 0 5%;
+        padding-top: 20%;
+    }
+    
+    .titre {
+        position: absolute;
+        top: 5%;
+        font-size: 10vw;
+        width: 70%;
+        margin-left: 5%;
+        margin-top: 15%;
+    }
+    
+    .imgL {
+        width: 30%;
+        top: 2%;
+        right: 5%;
+    }
+    
+    .part1, .part2 {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .part2 {
+        margin-top: 2rem;
+    }
+    
+    h1 {
+        font-size: 6vw;
+    }
+    
+    .carte .modalContainer {
+        top: 4%;
+        left: 0;
+        width: 100%;
+        
+        img {
+            width: 80%;
+        }
+        
+        h2 {
+            font-size: 6vw;
+        }
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 320px) {
+    .containerP {
+        font-size: 4.5vw;
+        padding-top: 35%;
+    }
+    
+    .titre {
+        font-size: 12vw;
+        width: 80%;
+        margin-top: 20%;
+    }
+    
+    .imgL {
+        width: 35%;
+        top: 5%;
+    }
+    
+    h1 {
+        font-size: 7vw;
+    }
+}
+
+/* Orientation paysage sur mobiles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .containerP {
+        padding-top: 15%;
+        font-size: 1.8vw;
+    }
+    
+    .titre {
+        position: absolute;
+        top: 0;
+        padding-top: 3rem;
+        font-size: 5vw;
+        width: 60%;
+    }
+    
+    .imgL {
+        width: 15%;
+        top: 5%;
+    }
+    
+    h1 {
+        font-size: 3vw;
+    }
+    
+    .carte .modalContainer {
+        width: 70%;
+        left: 15%;
+        
+        h2 {
+            font-size: 3vw;
+        }
+    }
+}
