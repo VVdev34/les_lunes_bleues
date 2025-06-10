@@ -3,6 +3,8 @@ import "../histoire/histoire.scss";
 import H_pic from "../../assets/h_img.jpg";
 import W_pic from "../../assets/lb_2023_water.jpeg";
 import S_pic from "../../assets/lb_2023_sit.jpg";
+import V_pic from "../../assets/Lunesbleus-13.jpg";
+
 import { motion } from "framer-motion";
 
 const textVariants = {
@@ -27,7 +29,7 @@ const photoVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 3,
+      duration: 4,
     },
   },
 };
@@ -40,11 +42,24 @@ const photoVariants2 = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 2,
+      duration: 3,
     },
   },
 };
 const photoVariants3 = {
+  initial: {
+    x: 500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 2,
+    },
+  },
+};
+const photoVariants4 = {
   initial: {
     x: 500,
     opacity: 0,
@@ -78,17 +93,17 @@ export default function Histoire() {
           pour les enfants et les familles en juillet, en plein air dans les
           parcs du centre-ville. Des sorties au spectacle dans les théâtres de
           Béziers et au Festival d’Avignon. Le point d’orgue reste notre
-          festival qui aura lieu pour sa première édition dans l’amphithéâtre du
-          Pont vieux , les Samedi 8 et Dimanche 9 Juin 2024. En 2023 pour la
-          pré-édition nous avions rassemblé plus de 500 personnes. Nous
+          festival qui aura lieu pour sa deuxième édition dans l’amphithéâtre du
+          Pont vieux , les Vendredi 27 et Samedi 28 Juin 2025. En 2023 pour la
+          pré-édition nous avions rassemblé plus de 500 personnes, et près du double pour notre édition 2024. Nous
           souhaitons pérenniser ce festival et créer ainsi un temps fort
           culturel annuel incontournable à Béziers et sur le territoire.
         </motion.p>
       </div>
       <div className="pic">
           <motion.img src={H_pic} alt="" variants={photoVariants} initial="initial" animate="animate"/>
-          <motion.img src={W_pic} alt="" variants={photoVariants2} initial="initial" animate="animate"/>
           <motion.img src={S_pic} alt="" variants={photoVariants3} initial="initial" animate="animate"/>
+          <motion.img src={V_pic} alt="" variants={photoVariants4} initial="initial" animate="animate"/>
       </div>
     </div>  
     </>

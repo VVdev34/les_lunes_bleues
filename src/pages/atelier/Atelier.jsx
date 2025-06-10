@@ -40,9 +40,7 @@ Celles et ceux qui veulent peuvent participer à un spectacle construit ensemble
       </motion.p>
       <img src={pic2} alt="" />
       <motion.p variants={textVariants} initial="initial" animate="animate">
-      C'est l'occasion de monter sur scène et quelle magnifique scène !
-Cette année nous revisitons les grands mythes grecques, notamment l’histoire d’Oreste et de sa famille ,assez, voire très compliquée. Dans la mythologie grecs, Oreste est un Atride, fils du roi Agamemnon et de Clytemnestre. Il est le frère cadet d'Iphigénie et d'Électre ainsi que de Chrysothémis.
-Avec malice nous avons fait se rencontrer les dieux de l’olympe et les humains dans une histoire universelle qui nous vient de l’origine du théâtre. C’est un vrai plaisir de voir ces habitants et habitantes devenir petit à petit des acteurs et actrices avec amusement, professionnalisme et bienveillance.
+      C'est l'occasion de monter sur scène et quelle magnifique scène ! Cette année nous revisitons le grand mythe théâtral d’Hamlet. Le texte universel de Shakespeare est un point de départ pour explorer le rapport intime de chaque participant dans sa rencontre avec le théâtre. C’est un vrai plaisir de voir ces habitants et habitantes devenir petit à petit des acteurs et actrices avec amusement, professionnalisme et bienveillance.
       </motion.p>
       <img src={pic3} alt="" />
     </div>

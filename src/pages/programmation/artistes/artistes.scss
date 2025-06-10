@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 99999; // Z-index très élevé pour être au-dessus de tout
   height: 100vh;
   width: 100vw;
   overflow: hidden; // Empêche le défilement du fond
@@ -50,7 +50,8 @@
   }
   
   img {
-    max-width: 100%;
+    max-width: 300px; // Limite la largeur maximale des images
+    width: 70%; // Pour que l'image soit plus petite
     height: auto;
     display: block;
     margin: 1.5rem auto;
@@ -82,6 +83,44 @@
     padding: 0 1rem;
     word-wrap: break-word;
   }
+}
+
+/* Override styles for modal conflicts */
+.carte .modalContainer {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 99999 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* Specificity for Mixeuses modal */
+.carte .mixeuses-modal {
+  z-index: 100000 !important;
+}
+
+.carte .modalContainer img {
+  width: 50% !important;
+  max-width: 160px !important;
+  min-width: 80px !important;
+  height: auto !important;
+  margin: 1rem auto !important;
+  display: block !important;
+}
+
+/* Style spécifique pour la modale mixeuses */
+.mixeuses-modal {
+  z-index: 100000 !important;
+  position: fixed !important;
+}
+
+.mixeuses-modal .content-wrapper {
+  z-index: 100001 !important;
 }
 
 /* Grands écrans et écrans standards */
@@ -164,36 +203,46 @@
   }
 }
 
-/* Très petits écrans et appareils anciens */
-@media (max-width: 320px) {
+/* Écrans mobiles */
+@media (max-width: 600px) {
   .modalContainer {
     .content-wrapper {
-      width: 98%;
-      padding: 0.8rem;
-    }
-    
-    h1 {
-      font-size: 1.1rem;
-      margin: 0.8rem 0 0.2rem 0;
-    }
-    
-    p {
-      font-size: 0.85rem;
-    }
-    
-    article {
-      font-size: 0.85rem;
-      line-height: 1.5;
-      padding: 0 0.3rem;
-    }
-    
-    .close {
-      font-size: 0.8rem;
-      padding: 4px 8px;
+      padding: 1.2rem;
     }
     
     img {
-      margin: 1rem auto;
+      max-width: 200px;
+      width: 60%;
+    }
+    
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    p, article {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 320px) {
+  .modalContainer {
+    .content-wrapper {
+      padding: 1rem;
+    }
+    
+    img {
+      max-width: 150px;
+      width: 50%;
+    }
+    
+    h1 {
+      font-size: 1.2rem;
+    }
+    
+    p, article {
+      font-size: 0.9rem;
     }
   }
 }

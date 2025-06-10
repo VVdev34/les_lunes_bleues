@@ -1,4 +1,5 @@
 import React from "react";
+import PhotoA from "../programmation/artistes/photos/hamelet.jpg";
 import "./artistes/artistes.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -30,6 +31,17 @@ const modalVariants = {
 
 const Hamelet = ({ open, onClose }) => {
   if (!open) return null;
+  
+  // Empêche le défilement de la page quand la modale est ouverte
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [open]);
+  
   return (
     <motion.div
       className="modalContainer will-change-transform fix-flicker"
@@ -42,6 +54,7 @@ const Hamelet = ({ open, onClose }) => {
     >
       <div className="content-wrapper">
         <p className="close" onClick={onClose}>Fermer</p>
+        <img src={PhotoA} alt="Hamelet" />
         <h1>C'est qui Hamlet ?!</h1>
         <p>Avec l'atelier théâtre des Lunes Bleues</p>
         <article>

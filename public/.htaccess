@@ -1,0 +1,30 @@
+# Empêcher l'accès aux dossiers source qui ne doivent pas être accessibles
+Options -Indexes
+
+# Activer le mode de réécriture d'URL
+RewriteEngine On
+RewriteBase /
+
+# Ne pas rediriger si le fichier demandé existe déjà
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rediriger toutes les autres requêtes vers index.html pour le routage React
+RewriteRule . /index.html [L]
+
+# Ajout d'en-têtes de sécurité et performance
+<IfModule mod_headers.c>
+    # Amélioration de la sécurité
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Amélioration de la mise en cache pour les ressources statiques
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    
+    <FilesMatch "\.(jpg|jpeg|png|gif|ico|svg)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+</IfModule>

@@ -20,7 +20,7 @@ export default function Sidebar({ children }) {
       path: "/programmation",
     },
     {
-      title: "Ateliers",
+      title: "Ateliers Théâtrales",
       path: "/atelier",
     },
     {

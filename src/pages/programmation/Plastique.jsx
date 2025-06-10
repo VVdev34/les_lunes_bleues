@@ -32,6 +32,16 @@ const modalVariants = {
 const Plastique = ({ open, onClose }) => {
   if (!open) return null;
   
+  // Empêche le défilement de la page quand la modale est ouverte
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [open]);
+  
   return (
     <motion.div 
       className="modalContainer will-change-transform fix-flicker"
@@ -45,11 +55,11 @@ const Plastique = ({ open, onClose }) => {
       <div className="content-wrapper">
         <p className="close" onClick={onClose}>Fermer</p>
         <img src={PhotoA} alt="Pièce en plastique" />
-        <h1>Par la Compagnie du Grand Cerf Bleu</h1>
+        <h1>Par la Cie Capharnaüm</h1>
         <p>
           Texte : Marius Von Mayenburg
-          <br />Mise en scène : Collectif
-          <br />Durée : ~1h15
+          <br />Mise en scène : Louiza Meffrer
+          <br />Durée : 1h20
         </p>
         <h1>Distribution :</h1>
         <p>

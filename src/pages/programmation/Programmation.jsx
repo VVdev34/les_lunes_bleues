@@ -105,6 +105,14 @@ function Programmation() {
       </motion.h2>
       
       <div className="containerP">
+        <motion.img 
+          src={imgL} 
+          alt="Les lunes bleues" 
+          className="imgL"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        />
         <motion.div
           className="part1 will-change-transform"
           variants={textVariants}
@@ -388,14 +396,6 @@ function Programmation() {
           </div>
         </motion.div>
       </div>
-      <motion.img
-          src={imgL}
-          alt=""
-          className="imgL will-change-transform"
-          variants={sliderVariants}
-          initial="initial"
-          animate="animate"
-      />
     </>
   );
 }

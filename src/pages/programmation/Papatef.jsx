@@ -31,6 +31,17 @@ const modalVariants = {
 
 const Papatef = ({ open, onClose }) => {
   if (!open) return null;
+  
+  // Empêche le défilement de la page quand la modale est ouverte
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [open]);
+  
   return (
     <motion.div 
       className="modalContainer will-change-transform fix-flicker" 

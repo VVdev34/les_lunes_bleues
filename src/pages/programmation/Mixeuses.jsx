@@ -32,6 +32,15 @@ const modalVariants = {
 const Mixeuses = ({ open, onClose }) => {
   if (!open) return null;
   
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [open]);
+  
   return (
     <motion.div 
       className="modalContainer will-change-transform fix-flicker" 
@@ -42,7 +51,7 @@ const Mixeuses = ({ open, onClose }) => {
       key="mixeuses-modal"
       layoutId="mixeuses-modal"
     >
-      <div className="content-wrapper">
+      <div className="content-wrapper" style={{ zIndex: 100001 }}>
         <p className="close" onClick={onClose}>Fermer</p>
         <img src={PhotoA} alt="Les Mixeuses Solidaires" />
         <h1>Les Mixeuses Solidaires</h1>
